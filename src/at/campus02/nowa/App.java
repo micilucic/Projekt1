@@ -28,12 +28,14 @@ public class App {
         while(!exit) {
             readUserInput();
             updateState();
-            printState();
+            printState(); //Nur die Ausgabe
         }
     }
 
     private void initialize() {
         //TODO: Initialisierungen hier durchführen
+        //Speieler und Karten anlegen !!! - man initialisiert Sachen, die nur einmal intialisert werden müssen
+
     }
 
     private void readUserInput() {
@@ -44,9 +46,25 @@ public class App {
     private void updateState() {
         //TODO: Benutzereingaben verarbeiten
 
+
         switch (figureNr){
             case 1:
                 figure = new FigureH();
+                break;
+            case 2:
+                figure = new FigureL();
+                break;
+            case 3:
+                figure = new FigureO();
+                break;
+            case 4:
+                figure = new FigureO2();
+                break;
+            case 5:
+                figure = new FigureI();
+                break;
+            case 6:
+                figure = new FigureMinus();
                 break;
             default: break;
         }
@@ -65,6 +83,7 @@ public class App {
         do {
             output.println("Welche Grafik möchten Sie anzeigen (1-6)");
             figureNr = input.nextInt();
+            output.println("Bitte wählen Sie eine Größe (1-3)");
             if (figureNr < 1 || figureNr > 6) {
                 output.println("Dies ist keine gültige Grafik!");
             } else {

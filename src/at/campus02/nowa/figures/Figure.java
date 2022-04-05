@@ -15,4 +15,16 @@ public abstract class Figure {
 
         return sb.toString();
     }
+
+    protected char[][] symbolM = new char[6][6];
+
+    public String toString() {
+        StringBuilder sbM = new StringBuilder();
+        for (int row = 0; row < 6; row++) {
+            for (int col = 0; col < 6; col++) {
+                sbM.append(symbolM[col][row]);
+            }
+            sbM.append('\n');
+        }
+    }
 }
