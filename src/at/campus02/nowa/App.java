@@ -41,6 +41,7 @@ public class App {
     private void readUserInput() {
         //TODO: Alle Eingaben der Benutzer einlesen
         inputFigure();
+
     }
 
     private void updateState() {
@@ -49,7 +50,7 @@ public class App {
 
         switch (figureNr){
             case 1:
-                figure = new FigureH();
+                figure = new FigureH(1);
                 break;
             case 2:
                 figure = new FigureL();
@@ -83,7 +84,7 @@ public class App {
         do {
             output.println("Welche Grafik möchten Sie anzeigen (1-6)");
             figureNr = input.nextInt();
-            output.println("Bitte wählen Sie eine Größe (1-3)");
+           //1 output.println("Bitte wählen Sie eine Größe (1-3)");
             if (figureNr < 1 || figureNr > 6) {
                 output.println("Dies ist keine gültige Grafik!");
             } else {
