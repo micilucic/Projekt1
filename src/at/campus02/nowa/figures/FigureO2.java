@@ -3,6 +3,7 @@ package at.campus02.nowa.figures;
 public class FigureO2 extends Figure {
     public FigureO2(int faktor) {
      this.faktor_ = faktor;
+     // wir brauchen faktor_ nicht immer initialisieren, nur einmal und dann mit this. darauf zugreifen
 
         symbol[0][0] = ' ';
         symbol[1][0] = 'X';

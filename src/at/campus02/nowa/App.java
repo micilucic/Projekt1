@@ -16,7 +16,7 @@ public class App {
     // Konstruktor
     // input wird verwendet um Daten vom Benutzer einzulesen (verwendet scanner)
     // output wird verwendet um Text auf der Konsole auszugeben (verwendet sysout)
-    public App(Scanner input, PrintStream output){
+    public App(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
     }
@@ -26,7 +26,7 @@ public class App {
         initialize();
         printState();
 
-        while(!exit) {
+        while (!exit) {
             readUserInput();
             updateState();
             printState(); //Nur die Ausgabe
@@ -42,6 +42,7 @@ public class App {
     private void readUserInput() {
         //TODO: Alle Eingaben der Benutzer einlesen
         inputFigure();
+        inputFigureSize();
 
     }
 
@@ -49,7 +50,8 @@ public class App {
         //TODO: Benutzereingaben verarbeiten
 
 
-        switch (figureNr){
+        //figureSize ist eigentlich dasselbe wie faktor_ !!!
+        switch (figureNr) {
             case 1:
                 figure = new FigureH(figureSize);
                 break;
@@ -68,13 +70,14 @@ public class App {
             case 6:
                 figure = new FigureMinus(figureSize);
                 break;
-            default: break;
+            default:
+                break;
         }
     }
 
     private void printState() {
         //TODO: Ausgabe des aktuellen Zustands
-        if (figure != null){
+        if (figure != null) {
             output.println(figure);
         }
     }
@@ -85,9 +88,23 @@ public class App {
         do {
             output.println("Welche Grafik möchten Sie anzeigen (1-6)");
             figureNr = input.nextInt();
+            if (figureNr < 1 || figureNr > 6) {
+                output.println("Dies ist keine gültige Grafik!");
+            } else {
+             //   output.println("Bitte wählen Sie eine Größe (1-3)");
+              //  figureSize = input.nextInt(); // hier musste man neue Variable anlegen, weil figureNr sonst überschrieben wäre
+                break;
+            }
+        } while (true);
+    }
+
+    private void inputFigureSize() {
+        // Hier sehen Sie ein Pattern für Benutzereingaben
+        // Solange kein gültiger Wert eingegeben wurde, wird die Eingabe wiederholt
+        do {
             output.println("Bitte wählen Sie eine Größe (1-3)");
             figureSize = input.nextInt();
-            if (figureNr < 1 || figureNr > 6) {
+            if (figureSize < 1 || figureSize > 4) {
                 output.println("Dies ist keine gültige Grafik!");
             } else {
                 break;

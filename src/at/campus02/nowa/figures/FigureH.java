@@ -1,8 +1,10 @@
 package at.campus02.nowa.figures;
 
 public class FigureH extends Figure {
-    public FigureH(int faktor) {
+    public FigureH(int faktor) { // ----> DAS IST KONSTRUKTOR
         int faktor_;
+
+        // wir brauchen faktor_ nicht immer initialisieren, nur einmal und dann mit this. darauf zugreifen
 
         this.faktor_ = faktor;
 
