@@ -11,6 +11,7 @@ public class App {
     private boolean exit = false;
     private int figureNr;
     private Figure figure;
+    private int figureSize;
 
     // Konstruktor
     // input wird verwendet um Daten vom Benutzer einzulesen (verwendet scanner)
@@ -50,22 +51,22 @@ public class App {
 
         switch (figureNr){
             case 1:
-                figure = new FigureH(1);
+                figure = new FigureH(figureSize);
                 break;
             case 2:
-                figure = new FigureL();
+                figure = new FigureL(figureSize);
                 break;
             case 3:
-                figure = new FigureO();
+                figure = new FigureO(figureSize);
                 break;
             case 4:
-                figure = new FigureO2();
+                figure = new FigureO2(figureSize);
                 break;
             case 5:
-                figure = new FigureI();
+                figure = new FigureI(figureSize);
                 break;
             case 6:
-                figure = new FigureMinus();
+                figure = new FigureMinus(figureSize);
                 break;
             default: break;
         }
@@ -84,7 +85,8 @@ public class App {
         do {
             output.println("Welche Grafik möchten Sie anzeigen (1-6)");
             figureNr = input.nextInt();
-           //1 output.println("Bitte wählen Sie eine Größe (1-3)");
+            output.println("Bitte wählen Sie eine Größe (1-3)");
+            figureSize = input.nextInt();
             if (figureNr < 1 || figureNr > 6) {
                 output.println("Dies ist keine gültige Grafik!");
             } else {

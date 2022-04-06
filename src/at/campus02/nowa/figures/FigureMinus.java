@@ -1,7 +1,10 @@
 package at.campus02.nowa.figures;
 
 public class FigureMinus extends Figure {
-    public FigureMinus() {
+    public FigureMinus(int faktor) {
+
+        this.faktor_ = faktor;
+
         symbol[0][0] = ' ';
         symbol[1][0] = ' ';
         symbol[2][0] = ' ';

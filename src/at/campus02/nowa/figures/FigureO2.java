@@ -1,7 +1,9 @@
 package at.campus02.nowa.figures;
 
 public class FigureO2 extends Figure {
-    public FigureO2() {
+    public FigureO2(int faktor) {
+     this.faktor_ = faktor;
+
         symbol[0][0] = ' ';
         symbol[1][0] = 'X';
         symbol[2][0] = ' ';
